@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: client1
+
+# feign
+
+logging:
+  level:
+    com.shengsiyuan.eureka_client.controller.EurekaFeignClient: debug
+
+
+feign:
+  hystrix:
+    enabled: true

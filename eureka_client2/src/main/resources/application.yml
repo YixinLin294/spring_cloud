@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: client2
+rocketmq:
+# 发送同一类消息的设置为同一个group，保证唯一，默认不需要设置，rocketmq会使用ip@pid(p id代表jvm进程id)作为唯一标示
+  group-name: ROCKETMQ_TEST
+#  是否开启自动配置
+  is-enable: true
+#  mq的nameserver地址
+  namesrv-addr: 127.0.0.1:9876
+#  消息最大长度 默认1024 * 4(4M)
+  producer-max-message-size: 4096
+#  发送消息超时时间， 默认 3000
+  producer-send-msg-timeout: 3000
+#  发送消息失败重试次数，默认2
+  producer-retry-times-when-send-failed: 2
+#  消费者线程数量
+  consumer-consume-thread-min: 5
+  consumer-consume-thread-max: 30
+#  设置一次消费消息的条数，默认为1条
+  consumer-consume-message-batch-max-size: 1
