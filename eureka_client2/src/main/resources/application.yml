@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: client2
+    active: client1
 rocketmq:
 # 发送同一类消息的设置为同一个group，保证唯一，默认不需要设置，rocketmq会使用ip@pid(p id代表jvm进程id)作为唯一标示
   group-name: ROCKETMQ_TEST
@@ -19,3 +19,12 @@ rocketmq:
   consumer-consume-thread-max: 30
 #  设置一次消费消息的条数，默认为1条
   consumer-consume-message-batch-max-size: 1
+
+
+apache:
+  rocketmq:
+    consumer:
+      PushConsumer: PushConsumer
+    producer:
+      producerGroup: Producer
+    namesrvAddr: localhost:9876
